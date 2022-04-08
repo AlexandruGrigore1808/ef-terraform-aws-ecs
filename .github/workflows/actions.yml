@@ -37,7 +37,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
-  deploy:
+  stage-3:
     name: Terraform execution
     runs-on: ubuntu-latest
     environment: dev
@@ -76,7 +76,7 @@ jobs:
         AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  deploy:
+  stage-4:
     name: Build image, push it to ECR and deploy it to ECS - these steps should be further splitted.
     runs-on: ubuntu-latest
     environment: dev
